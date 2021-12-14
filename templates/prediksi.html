@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Indeks Standar Pencemar Udara</title>
+    <!---style prediksi-->
+    <style>
+        * {
+            text-decoration: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Plus Jakarta Sans',sans=serif;
+            background-color:bisque;
+        }
+        .logo a{
+            font-weight: 800;
+            font-size: 20px;
+            float: left;
+            margin-left: 10%;
+            font-family: courier;
+            color: navy;
+        }
+        /*navbar*/
+        nav {
+            position: sticky;
+            position: -webkit-sticky;
+            width: 100%;
+            line-height: 60px;
+            top: 0;
+            height: 60px;
+            background-color: #FFFFFF;
+            box-shadow: -1px -7px 20px 0px bisque;
+            border: 1px solid rgb(211, 125, 21);
+            z-index: 1;
+        }
+
+        nav ul {
+            position: relative;
+            top: 0;
+            margin: 0;
+            float: right;
+            right: 10%;
+        }
+
+        nav ul li {
+            float: left;
+            display: block;
+            margin: 0px 15px 0px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: navy;
+            font-family: "Helvetica", sans-serif;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            background-color: #2E4C6D;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding: 15px 20px 15px 20px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        section#prediksi{
+            position: relative;
+            max-width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 30px;
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 7px 0px rgba(136, 146, 146, 0.2);
+            padding: 30px;
+        }
+
+        /* form */
+        .bg-blue{
+            background-color:lightseagreen;
+            font-family: "Helvetica", sans-serif;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        section#input-par{
+            position: relative;
+            max-width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 7px 0px rgba(136, 146, 146, 0.2);
+            padding: 30px;
+        }
+        #input-par .form{
+            width: 100%;
+            display: grid;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        label{
+            font-family: "Helvetica", sans-serif;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+        input{
+            font-family: "Helvetica", sans-serif;
+            padding: 10px 20px 10px 20px;
+            outline: none;
+            border-radius: 3px;
+            border: 1px solid #2E4C6D;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        p{
+            font-family: "Helvetica", sans-serif;
+            outline: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <div class="logo"><a href="">Cek Kondisi Udara</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">BERANDA</a></li>
+                    <li><a href="/prediksi">PREDIKSI</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id=prediksi>
+        <div class="kolom">
+            <p class="deskripsi">Bagaimana Kondisi Udara Saat Ini?</p>
+            <h2>Prediksi Kategori ISPU</h2>
+        </div>
+    </section>
+
+    <section id="input-par">
+        <form method="POST", action="{{url_for('prediksi')}}">
+            <div class="form">
+                <label>PM10</label>
+                <input type="text", name="pm10",
+                placeholder="Masukkan nilai PM10", value='', required="required">
+            </div>
+            <div class="form">
+                <label>SO2</label>
+                <input type="text", name="so2",
+                placeholder="Masukkan nilai SO2", value='', required="required">
+            </div>
+            <div class="form">
+                <label>CO</label>
+                <input type="text", name="co",
+                placeholder="Masukkan nilai CO", value='', required="required">
+            </div>
+            <div class="form">
+                <label>O3</label>
+                <input type="text", name="o3",
+                placeholder="Masukkan nilai O3", value='', required="required">
+            </div>
+            <div class="form">
+                <label>NO2</label>
+                <input type="text", name="no2",
+                placeholder="Masukkan nilai NO2", value='', required="required">
+            </div>
+            <div class="form">
+                <input type="submit",
+                value="PREDIKSI", class="bg-blue">
+            </div>
+        </form>
+    </section>
+    
+</body>
+</html>

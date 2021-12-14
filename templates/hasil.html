@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+    <!---style hasil-->
+    <style>
+        * {
+            text-decoration: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Plus Jakarta Sans',sans=serif;
+            background-color:bisque;
+        }
+        section#hasil{
+            position: relative;
+            max-width: 50%;
+            margin-top: 140px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 7px 0px rgba(136, 146, 146, 0.2);
+            padding: 30px;
+        }
+        .menu-mobile{
+            position: relative;
+            float: right;
+            display: none;
+        }
+        .menu-mobile a{
+            color: bisque;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid beige;
+        }
+        h1, h2, h3, h4, h5{
+            font-family: "Helvetica", sans-serif;
+            outline: none;
+            margin: auto;
+            text-align: center;
+        }
+        h1{
+            font-size: 50px;
+        }
+        h2{
+            background-color: rgb(255, 0, 0);
+            font-size: 40px;
+        }
+        h3{
+            background-color: orange;
+            font-size: 40px;
+        }
+        h4{
+            background-color: yellow;
+            font-size: 40px;
+        }
+        h5{
+            background-color: rgb(0, 255, 0);
+            font-size: 40px;
+        }
+        p{
+            font-family: "Helvetica", sans-serif;
+            outline: none;
+            margin-top: 10px;
+            font-size: 15px;
+            text-align: center;
+        }
+        nav {
+            position: relative;
+            width: 40%;
+        }
+        section#back{
+            position: relative;
+            max-width: 10%;
+            max-height: 80px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 7px 0px rgba(136, 146, 146, 0.2);
+            padding: 10px;
+        }
+        .tbl a{
+            text-decoration: none;
+            color: black;
+            font-family: "Helvetica", sans-serif;
+            outline: none;
+            margin: 0px 30px 0px 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+    
+    </style>
+</head>
+<body>
+    <section id="hasil">
+        <div>
+            <h1>
+                Hasil Prediksi :
+            </h1>
+
+            {% if hasil_prediksi == 'SANGAT TIDAK SEHAT': %} 
+            <h2>{{hasil_prediksi}}</h2>
+            {% elif hasil_prediksi == 'TIDAK SEHAT': %} 
+            <h3>{{hasil_prediksi}}</h3>
+            {% elif hasil_prediksi == 'SEDANG': %} 
+            <h4>{{hasil_prediksi}}</h4>
+            {% elif hasil_prediksi == 'BAIK': %} 
+            <h5>{{hasil_prediksi}}</h5>
+            {%endif%}
+            
+            <div>
+                <p>PM10 : {{ pm10 }}</p>
+                <p>SO2  : {{ so2 }}</p>
+                <p>CO   : {{ co }}</p>
+                <p>O3   : {{ o3 }}</p>
+                <p>NO2  : {{ no2 }}</p>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <section id="back">
+        <nav>
+            <div class="menu-mobile">
+                <a href="">Menu</a>
+            </div>
+            <div class="tbl">
+                <a href="/">KEMBALI</a>
+            </div>
+        </nav>
+    </section>
+        
+</body>
+</html>
